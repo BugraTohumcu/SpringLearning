@@ -17,8 +17,6 @@ public class JobController {
     public void setService(JobService service) {
         this.service = service;
     }
-
-
     @GetMapping("jobPosts")
     public List<JobPost> viewJob(){
        return service.getAllJobs();
