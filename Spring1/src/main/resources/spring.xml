@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- We use property for inject value to private variable with setter method -->
+    <!-- We use ref to inject objects-->
+<bean id="alien" class = "com.bugratohumcu.Alien" autowire="byType">
+
+<!-- Constructor Injection-->
+<!--<constructor-arg type = "com.bugratohumcu.Laptop" ref = "lap1"/>-->
+<!--<constructor-arg type = "int" value="10"/>-->
+
+<!--        <constructor-arg  index = "1" ref = "desktop"/>-->
+<!--        <constructor-arg  index= "0" value = "25"/>-->
+
+<!--    <property name="num" value ="21"/>-->
+<!--If you don't want to mention property you can use autowire = byName or byType-->
+<!--    <property name="computer" ref="desktop"/>-->
+
+</bean>
+
+
+<!--    If you want autowire with byType and there are two objects such as below you can demonstrate
+one of the objects as a primary-->
+    <bean id="laptop" class = "com.bugratohumcu.Laptop" primary="true"/>
+
+<!--Lazy-init means objects is not going to created by default, it will be created when you call it-->
+    <bean id="desktop" class = "com.bugratohumcu.Desktop" lazy-init="true"/>
+</beans>
